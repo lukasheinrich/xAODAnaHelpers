@@ -2,6 +2,8 @@
 services: docker
 language: ruby
 script:
+  - docker run -u root --rm -v $PWD/hacktmp:/tmp -w /workarea -v ubuntu bash -c 'echo hello > /tmp/what.txt'
+  - docker run -u root --rm -v $PWD/hacktmp:/tmp -w /workarea -v $PWD:/workarea/src/xAODAnaHelpers atlas/analysisbase:${ABV_CM} bash -c 'echo hello > /tmp/what.txt'
   - docker run -u root --rm -v $PWD/hacktmp:/tmp -w /workarea -v $PWD:/workarea/src/xAODAnaHelpers atlas/analysisbase:${ABV_CM} /workarea/src/xAODAnaHelpers/ci/run.sh
 env:
   - ABV_CM=21.2.3
