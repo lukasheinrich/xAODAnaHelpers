@@ -4,6 +4,7 @@ language: ruby
 script:
   - docker run -u root --rm ubuntu bash -c 'echo hello > /tmp/what.txt'
   - docker run -u root --rm fedora bash -c 'echo hello > /tmp/what.txt'
+  - docker run -u root --rm cern/cc7-base bash -c 'echo hello > /tmp/what.txt'
   - docker run -u root --rm cern/slc6-base:latest bash -c 'echo hello > /tmp/what.txt'
   - docker run -u root --rm atlas/slc6-atlasos bash -c 'echo hello > /tmp/what.txt'
   - docker run -u root --rm atlas/analysisbase:${ABV_CM} bash -c 'echo hello > /tmp/what.txt'
