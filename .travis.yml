@@ -4,6 +4,7 @@ language: ruby
 require:
   - sudo
 script:
+  - docker info
   - docker run -u root --rm ubuntu bash -c 'echo hello > /tmp/what.txt'
   - docker run -u root --rm fedora bash -c 'echo hello > /tmp/what.txt'
   - docker run -u root --rm centos bash -c 'echo hello > /tmp/what.txt'
